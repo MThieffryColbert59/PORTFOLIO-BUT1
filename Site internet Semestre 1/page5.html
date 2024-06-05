@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Accueil</title>
+        <link rel="stylesheet" href="./css/disposition.css" />
+    </head>
+    <body>  
+        <header>
+            <a href="index.html">
+                <img src="images/logo.png"></img>
+            </a>
+            <a href="covoiturage.html">Covoiturage</a>
+            <a href="page3.html">Vélo éléctrique</a>
+            <a href="page4.html">Trotinette</a>
+        </header>
+        <form method="post" class="formulaire" action="./page8.html">
+            <div class="formulaire">
+              <label for="Age":>Quel est votre Age? </label>
+              <select>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+                <option>22</option>
+                <option>23</option>
+                <option>24</option>
+                <option>25</option>
+                <option>26</option>
+                <option>27</option>
+                <option>28</option>
+                <option>29</option>
+                <option>30</option>
+                <option>31</option>
+                <option>32</option>
+                <option>33</option>
+                <option>34</option>
+                <option>35</option>
+                <option>36</option>
+                <option>37</option>
+                <option>38</option>
+                <option>39</option>
+                <option>40</option>
+                <option>41</option>
+                <option>42</option>
+                <option>43</option>
+              </select>
+              <label for="Nom">Nom:</label>
+              <input type="text" name="nom" id="nom" required />
+              <label for="Prenom">Prenom:</label>
+              <input type="text" name="nom" id="nom" required />
+              <label for="email">Quel est votre email? </label>
+              <input type="email" name="email" id="email" placeholder="monadresse@boite.com" required/>
+              <label for="prix">Combien coûterai votre trajet ? </label>
+            <input type="text" name="prix" id="prix" placeholder="votreprix €" required />
+              <label for="DateDébut">Date de la location? </label>
+              <input type="date" name="DateDébut" id="DateDébut" placeholder="dd/mm/yy" required />
+              <label for="HeureDébut">A quelle heure débute la location? </label>
+              <input type="time" name="HeureDébut" id="HeureDébut" required />
+              <input type="submit" value="Valider">
+            </div>
+          </form>
+    </body> 
+</html>
