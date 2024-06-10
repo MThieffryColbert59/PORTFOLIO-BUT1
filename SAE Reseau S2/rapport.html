@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Rapport</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Rapport</h1>
+</header>
+<h1
+id="rapport-sur-linstallation-dune-machine-virtuelle-debian-avec-environnement-graphique-mate">Rapport
+sur l’Installation d’une Machine Virtuelle Debian avec Environnement
+Graphique MATE</h1>
+<h2 id="introduction">1. Introduction</h2>
+<p>Ce rapport détaille le processus d’installation manuelle d’une
+machine virtuelle Debian, y compris la configuration de l’environnement
+graphique MATE et l’ajout d’utilisateurs et de logiciels initiaux. Cette
+installation servira de base pour automatiser le déploiement
+ultérieur.</p>
+<h2 id="prérequis-matériels">2. Prérequis Matériels</h2>
+<p>Avant de commencer, assurez-vous que la machine physique sur laquelle
+VirtualBox sera exécuté réponde aux spécifications suivantes :</p>
+<ul>
+<li><strong>4 Go de RAM minimum</strong></li>
+<li><strong>20 Go d’espace disque ou plus</strong></li>
+<li><strong>VirtualBox installé avec son “extension pack”
+(VBoxGuestAddition.iso) sur la machine hôte.</strong></li>
+</ul>
+<h2 id="préparation-de-la-machine-virtuelle">3. Préparation de la
+Machine Virtuelle</h2>
+<h3 id="lancement-doracle-vm-virtualbox">3.1 Lancement d’Oracle VM
+VirtualBox</h3>
+<p>Avant d’entamer le processus d’installation manuelle, assurez-vous de
+lancer Oracle VM VirtualBox sur votre machine hôte. Pour démarrer
+l’interface graphique de VirtualBox et créer une nouvelle machine: 1.
+Recherchez et ouvrez l’application Oracle VM VirtualBox sur votre
+système d’exploitation.<img src="icone%20virtualBox.jpg"
+alt="Oracle VirtualBox icone" /> 2. Appuyer sur l’icone nouvelle.<img
+src="vm%20VirtualBox%20icone%20nouvelle.png"
+alt="icone nouvelle machine virtuelle" /> 3. Puis entrez les
+informations selon les caracteristiques ci-dessous.</p>
+<h3 id="caractéristiques-à-respecter">3.2 Caractéristiques à
+Respecter</h3>
+<p>Suivez attentivement ces étapes pour créer la machine virtuelle avec
+les caractéristiques spécifiées :</p>
+<ul>
+<li><p>Nom de la machine dans VirtualBox : <code>sae203</code></p></li>
+<li><p>Dossier de la machine :
+<code>/usr/local/virtual_machine/infoetu/login</code> (Remplacez
+<code>login</code> par votre login)</p></li>
+<li><p>Type : Linux</p></li>
+<li><p>Version : Debian 64-bit
+<code>Dans "Debian 64-bit", l'expression "64-bit" fait référence à l'architecture du système d'exploitation Debian, qui est conçu pour fonctionner sur des processeurs 64 bits. Cela signifie que le système d'exploitation peut gérer et utiliser des instructions et des données de 64 bits à la fois, ce qui permet généralement des performances améliorées et une prise en charge de quantités de mémoire plus importantes par rapport aux systèmes d'exploitation 32 bits.</code></p></li>
+<li><p>Mémoire vive (RAM) : 2048 Mo <img src="choix%20ram.png"
+alt="choix ram" /></p></li>
+<li><p>Disque dur : 20 Go (une seule partition) <img
+src="choix%20stockage.png" alt="choix stockage" /></p></li>
+<li><p>Laisser le reste par défaut.</p>
+<p><code>La configuration réseau utilisée par défaut dans Debian est généralement NAT (Network Address Translation) par défaut. NAT est une méthode qui permet de traduire les adresses IP et les ports utilisés dans un réseau privé en adresses IP visibles sur l'Internet public. Cela permet aux dispositifs dans le réseau privé d'accéder à Internet en utilisant une seule adresse IP publique.</code></p>
+<p><code>Le nom du fichier XML contenant la configuration de votre machine dépend du type de virtualisation utilisé (par exemple, si vous utilisez VirtualBox, VMWare, ou un autre logiciel de virtualisation). Il pourrait s'agir de fichiers tels que "vm.xml" pour libvirt, "config.xml" pour VirtualBox, ou d'autres noms similaires.</code></p>
+<p><code>Il est généralement possible de modifier directement le fichier de configuration pour attribuer davantage de ressources matérielles à votre machine virtuelle, comme l'ajout de processeurs. Cependant, les détails précis sur la manière de le faire dépendent du logiciel de virtualisation utilisé et de sa syntaxe de configuration spécifique. En règle générale, vous devrez modifier les paramètres appropriés dans le fichier de configuration pour spécifier le nombre de processeurs désiré, puis redémarrer la machine virtuelle pour que les changements prennent effet. Assurez-vous de sauvegarder le fichier de configuration avant d'apporter des modifications, au cas où quelque chose ne se passerait pas comme prévu.</code></p></li>
+</ul>
+<p>Après avoir saisi ces informations et les avoir validées, le matériel
+de la machine virtuelle sera créé. Un lecteur de CD-ROM virtuel sera
+disponible par défaut pour l’installation du système d’exploitation à
+partir d’une image ISO bootable.</p>
+<h2 id="installation-manuelle">4 Installation Manuelle</h2>
+<h3 id="configuration-prè-lancement">4.1 Configuration
+prè-lancement</h3>
+<p>Avant de commencer l’installation manuelle, assurez-vous d’avoir une
+image ISO bootable de l’installation de Debian 11 ou Debian 12 (amd64).
+Vous pouvez récupérer l’ISO d’installation réseau sur le site officiel
+de Debian. Ces fichiers ont une taille d’environ 400 Mo et 600 Mo
+respectivement.</p>
+<pre><code>``` Un fichier ISO bootable est une image de disque conçue pour être utilisée comme support d&#39;installation ou de démarrage pour un système d&#39;exploitation. Lorsque vous gravez un fichier ISO sur un CD ou un DVD, ou que vous le copiez sur une clé USB, vous obtenez un support amorçable qui peut être utilisé pour installer ou démarrer un système d&#39;exploitation sur un ordinateur.```</code></pre>
+<p>Pour récupérer l’ISO depuis le site officiel de Debian, suivez ces
+étapes :</p>
+<ol type="1">
+<li>Accédez au site <a
+href="lien_vers_le_site_officiel_debian">Debian</a>.</li>
+<li>Recherchez la section des téléchargements et sélectionnez la version
+appropriée (Debian 11 ou Debian 12, amd64).</li>
+<li>Téléchargez l’ISO d’installation réseau.</li>
+</ol>
+<p>Une fois que vous avez obtenu l’ISO, il faut ouvrir la panneau de
+configuration grâce à cette icône : <img src="icone%20configuration.png"
+alt="icone configuration" /></p>
+<p>Dans l’onglet stockage vous pouvez changer de disque de système
+d’exploitation : <img
+src="changement%20du%20disque%20de%20systeme%20d&#39;exploitation.png"
+alt="changement du disque de systeme d’exploitation" /></p>
+<p>En cas de difficultés, référez-vous à la documentation Debian
+disponible sur le <a href="lien_vers_le_guide">guide Debian</a>.</p>
+<h3 id="configuration">4.2 Configuration</h3>
+<p>Vous pouvez enfin demarrer votre machine et suivre la configuration
+en entrant ces information:</p>
+<ul>
+<li>Nom de la machine (à l’installation) : serveur</li>
+<li>Domaine : Laisser vide</li>
+<li>Pays/langue : France</li>
+<li>Miroir : <a
+href="http://debian.polytech-lille.fr">http://debian.polytech-lille.fr</a></li>
+<li>Proxy : pas de proxy</li>
+<li>Compte administrateur : root / root</li>
+<li>Un compte utilisateur : User / user / user</li>
+<li>Partition : 1 seule partition de la taille du disque</li>
+<li>Sélection des logiciels de démarrage (Paquetages logiciels à
+préinstaller pour se simplifier la vie par la suite) :
+<ul>
+<li><p>environnement de bureau Debian</p></li>
+<li><p>… MATE (penser à décocher Gnome)</p>
+<p><code>MATE et GNOME sont tous deux des environnements de bureau pour les systèmes d'exploitation basés sur Linux, comme Ubuntu. MATE est connu pour son interface plus traditionnelle et légère, tandis que GNOME offre une expérience plus moderne et riche en fonctionnalités. MATE est souvent préféré par les utilisateurs cherchant une interface plus familière et plus simple, notamment pour les débutants.</code></p></li>
+<li><p>serveur web</p>
+<p><code>Un serveur web est un logiciel qui s'exécute sur un ordinateur et qui stocke les fichiers constituant un site web. Il répond aux requêtes HTTP des clients (navigateurs web) en leur envoyant les fichiers demandés, ce qui permet aux utilisateurs d'accéder au contenu du site via Internet.</code></p></li>
+<li><p>serveur ssh</p>
+<p><code>Un serveur SSH est un serveur qui prend en charge le protocole SSH (Secure Shell). SSH est un protocole réseau sécurisé qui permet aux utilisateurs de se connecter à distance à un ordinateur via un canal chiffré. Les administrateurs système utilisent souvent SSH pour accéder à distance à des serveurs et exécuter des commandes en ligne de commande de manière sécurisée.</code></p></li>
+<li><p>utilitaire usuels du système
+<code>Un serveur mandataire, également appelé serveur proxy, est un serveur informatique qui agit en tant qu'intermédiaire entre un poste client et un serveur cible. Il reçoit les requêtes des clients et les transmet au serveur cible, puis renvoie les réponses du serveur cible au client. Les serveurs mandataires sont souvent utilisés pour filtrer le trafic, améliorer les performances et renforcer la sécurité.</code></p></li>
+</ul></li>
+</ul>
+<h2 id="gestion-de-la-machine">5 Gestion de la machine</h2>
+<h3 id="accès-sudo-pour-user">5.1 Accès sudo pour user</h3>
+<p>L’attribution d’un accès sudo à l’utilisateur facilitera la gestion
+du système, bien que dans des situations réelles, cela ne soit pas
+obligatoire et puisse être considéré comme une fragilité. Suivez ces
+étapes :</p>
+<ul>
+<li>Passer en mode console : <code>Ctrl + Alt + F1</code> (si cela vous
+met en plein écran, vous n’êtes pas dans la console de la machine
+virtuelle).</li>
+<li>Se connecter en tant que root: login = root et mot de passe =
+root.(pour changer d’utilisateur à root ‘su root’)</li>
+<li>Ajouter le groupe sudo à votre utilisateur principal (sudo gpasswd
+-a &lt;nom de l’utilisateur&gt; sudo). Et pour voir qui a les droits
+sudo: ‘usermod -aG sudo &lt;nom de l’utilisateur&gt;’.</li>
+<li>Recharger votre session.</li>
+</ul>
+<p>Vous pouvez maintenant utiliser la commande <code>sudo</code> avec le
+compte utilisateur. La version du noyau Linux utilisée par votre machine
+virtuelle est la 6.1.0-17-amd64, comme indiqué par la commande “uname
+-r”.</p>
+<h3 id="installation-des-suppléments-invités">5.2 Installation des
+Suppléments Invités</h3>
+<p>Les suppléments invités sont des logiciels supplémentaires fournis
+par des programmes de virtualisation comme VirtualBox ou VMware. Deux
+principales raisons de les installer sont :</p>
+<ul>
+<li><p>Redimensionner : Les suppléments invités permettent souvent de
+redimensionner dynamiquement la fenêtre de la machine virtuelle, offrant
+une meilleure adaptation à l’environnement d’affichage de
+l’hôte.</p></li>
+<li><p>Amélioration de l’environnement de travail : Ils offrent souvent
+des fonctionnalités supplémentaires telles que le partage de fichiers
+entre l’hôte et la machine virtuelle, le glisser-déposer de fichiers,
+l’intégration du presse-papiers, etc., ce qui améliore considérablement
+l’expérience de l’utilisateur dans la virtualisation.</p></li>
+</ul>
+<p>Pour ajouter les suppléments invités, nous allons devoir compiler des
+programmes. Il nous faut donc des outils de compilation et les fichiers
+d’en-têtes du noyau Linux utilisé. Suivez ces étapes :</p>
+<ol type="1">
+<li>Insérer le CD des suppléments :
+<code>Périphériques › Insérer l’image CD des additions invités…</code></li>
+<li>Pour monter le CD entrez dans le terminal :
+<ul>
+<li>sudo mount /dev/cdrom /mnt
+<code>Pour information la commande "mount" est utilisée pour attacher un système de fichiers à un point de montage dans la hiérarchie du système de fichiers. En d'autres termes, elle permet d'accéder à un système de fichiers en le liant à un emplacement spécifique dans le système de fichiers existant. Cela permet aux utilisateurs d'accéder au contenu du système de fichiers monté comme s'il faisait partie intégrante de la hiérarchie du système de fichiers local.</code></li>
+</ul></li>
+<li>Pour installer les suppléments entrez dans le terminal :
+<ul>
+<li>sudo /mnt/VBoxLinuxAdditions.run</li>
+</ul></li>
+<li>Eteignez et redemarrez la machine, vous conctatez que vous pouvez
+mettre la machine en pleine écran.</li>
+</ol>
+<h2 id="quelques-informations-sur-debian">6 Quelques informations sur
+debian</h2>
+<p>Le Projet Debian est une initiative mondiale de volontaires visant à
+créer un système d’exploitation composé exclusivement de logiciels
+libres. Le nom Debian trouve son origine dans les prénoms de ses
+créateurs, Ian Murdock et son épouse, Debra1.</p>
+<p>Le Projet Debian offre trois durées de prise en charge pour ses
+versions : la durée minimale, la durée en support long terme (LTS), et
+la durée en support long terme étendue (ELTS). La durée minimale est
+généralement de 5 ans, la durée LTS est de 5 ans supplémentaires, et
+l’ELTS offre un prolongement commercial de 10 ans2.</p>
+<p>Les mises à jour de sécurité sont fournies gratuitement à tous les
+utilisateurs Debian, sans date de fin2.</p>
+<p>Debian maintient activement au moins trois versions majeures : stable
+(actuellement Debian 12 “Bookworm”), testing, et unstable3.</p>
+<p>Les noms de code des différentes versions de Debian sont inspirés des
+personnages du film d’animation “Toy Story” des studios Pixar Animation
+Studios4.</p>
+<p>Debian prend en charge huit architectures officielles dans la version
+Bullseye, dont PC 32 bits (i386), PC 64 bits (amd64), ARM 64 bits
+(arm64), ARM EABI (armel), ARMv7 (armhf), MIPS mipsel, MIPS 64 bits
+petit-boutiste (mips64el), PowerPC 64 bits petit-boutiste (ppc64el), et
+IBM System z (s390x)5.</p>
+<p>Le premier nom de code de Debian était “Buzz”, annoncé le 17 juin
+1996, avec le numéro de version 1.1. Projet Debian - Introduction ↩︎</p>
+<p><a
+href="https://fr.wikipedia.org/wiki/Historique_des_versions_de_Debian">Versions
+de Debian</a></p>
+<h2 id="installation-préconfigurée">7 Installation préconfigurée</h2>
+<p>Comme illustré dans la section sur l’Installation automatisée,
+l’image ISO d’installation de Debian 11 propose une option avancée
+permettant d’automatiser le processus d’installation. Cette
+fonctionnalité est également disponible pour la version actuelle de
+Debian 12. Elle offre la possibilité de valider automatiquement les
+choix par défaut, éliminant ainsi la nécessité de rester devant
+l’ordinateur pendant l’ensemble de l’installation, sans devoir
+surveiller d’éventuelles étapes demandant une action spécifique.</p>
+<figure>
+<img src="installation%20automatisée.PNG"
+alt="installation automatisée" />
+<figcaption aria-hidden="true">installation automatisée</figcaption>
+</figure>
+<h2 id="automatisation">8 Automatisation</h2>
+<h3 id="fichiers-de-pré-configuration">8.1 Fichiers de
+Pré-configuration</h3>
+<p>Pour faciliter la pré-configuration de votre machine virtuelle,
+suivez ces étapes :</p>
+<ol type="1">
+<li><p>Récupérez l’archive <code>autoinstall_Debian.zip</code> depuis
+Moodle et décompressez-la dans le répertoire de votre machine
+virtuelle.</p></li>
+<li><p>Remplacez la chaîne <code>@@UUID@@</code> par un identifiant
+unique universel en exécutant la commande suivante dans le même
+répertoire que votre fichier <code>S203-Debian12.viso</code> :
+<code>bash    sed -i -E "s/(--iprt-iso-maker-file-marker-bourne-sh).*$/\1=$(cat /proc/sys/kernel/random/uuid)/" S203-Debian12.viso</code></p></li>
+<li><p>Entrez ces commandes afin de configurer et avoir une interface
+graphique</p></li>
+</ol>
+<figure>
+<img src="commande%20automatisation.png"
+alt="commande automatisation et installation d’une interface graphique" />
+<figcaption aria-hidden="true">commande automatisation et installation
+d’une interface graphique</figcaption>
+</figure>
+<h1 id="conclusion">Conclusion</h1>
+<p>Cette section guide l’utilisateur à travers les étapes nécessaires
+pour pré-configurer la machine virtuelle en vue d’une installation
+automatisée.</p>
+</body>
+</html>
